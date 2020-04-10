@@ -28,10 +28,14 @@ main {
 
 .package__info {
     padding: 16px;
-    border: 1px solid #0e3f1f;
+    border: 1px solid #0e4f1f;
     font-size: 20px;
-    color: #0e3f1f;
+    color: #0e4f1f;
     background: white;
+}
+
+.clearfix {
+    clear: both;
 }
 
 #plus {
@@ -40,6 +44,15 @@ main {
 
 #free {
     background: rgba(234, 252, 237, 0.95);
+    float: right;
+    border-right: none;
+    border-left: 4px solid #0e4f1f;
+    text-align: right;
+}
+
+#free:hover,
+#free:active {
+    border-left-color: #ff5454;
 }
 
 #premium {
