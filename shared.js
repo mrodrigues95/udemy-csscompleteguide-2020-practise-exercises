@@ -2,22 +2,31 @@ var backdrop = document.querySelector('.backdrop');
 var modal = document.querySelector('.modal');
 var selectPlanButtons = document.querySelectorAll('.plan button');
 var modalNoButton = document.querySelector('.modal button');
-
-console.dir(modalNoButton);
+var toggleButton = document.querySelector('.toggle-button');
+var mobileNav = document.querySelector('.mobile-nav');
 
 // Show the modal when the user clicks on a package.
 for (var i = 0; i < selectPlanButtons.length; i++) {
     selectPlanButtons[i].addEventListener('click', function() {
-        modal.style.display = 'block';
-        backdrop.style.display = 'block';
+        modal.classList.add('open');
+        backdrop.classList.add('open');
     });
 }
 
-// Close the modal when the user clicks on the backdrop or the "No" button.
 modalNoButton.addEventListener('click', closeModal);
-backdrop.addEventListener('click', closeModal);
+backdrop.addEventListener('click', function() {
+    mobileNav.classList.remove('open');
+    closeModal();
+});
 
+// Show the side navigation and modal.
+toggleButton.addEventListener('click', function() {
+    mobileNav.classList.add('open');
+    backdrop.classList.add('open');
+});
+
+// Close the modal when the user clicks on the backdrop.
 function closeModal() {
-    backdrop.style.display = 'none';
-    modal.style.display = 'none';
+    modal.classList.remove('open');
+    backdrop.classList.remove('open');
 }
