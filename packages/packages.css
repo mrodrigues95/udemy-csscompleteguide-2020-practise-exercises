@@ -43,7 +43,7 @@ main {
     background: #ff5454;
     padding: 0.5rem;
     z-index: 10;
-    transform: rotateZ(45deg) translateX(3.5rem) translateY(-1rem);
+    transform: rotate(45deg) translate(3.5rem, -1rem);
     width: 12rem;
     text-align: center;
 }
