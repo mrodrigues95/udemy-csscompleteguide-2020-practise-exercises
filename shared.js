@@ -4,6 +4,7 @@ var selectPlanButtons = document.querySelectorAll('.plan button');
 var modalNoButton = document.querySelector('.modal button');
 var toggleButton = document.querySelector('.toggle-button');
 var mobileNav = document.querySelector('.mobile-nav');
+var ctaButton = document.querySelector('.main-nav__item--cta');
 
 // Show the modal when the user clicks on a package.
 for (var i = 0; i < selectPlanButtons.length; i++) {
@@ -26,6 +27,18 @@ backdrop.addEventListener('click', function() {
 toggleButton.addEventListener('click', function() {
     mobileNav.classList.add('open');
     backdrop.classList.add('open');
+});
+
+ctaButton.addEventListener('animationstart', function(event) {
+    console.log('Animation started', event);
+});
+
+ctaButton.addEventListener('animationend', function(event) {
+    console.log('Animation ended', event);
+});
+
+ctaButton.addEventListener('animationiteration', function(event) {
+    console.log('Animation iteration', event);
 });
 
 // Close the modal when the user clicks on the backdrop.
